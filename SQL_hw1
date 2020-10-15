@@ -1,0 +1,25 @@
+-- 1.Брой потребители
+SELECT * FROM users;
+-- 324 users
+-- 2.Най-стария потребител
+SELECT * FROM users ORDER BY birthDate ASC;
+-- popopo123
+-- 3. Най-младия потребител
+SELECT * FROM users ORDER BY birthDate DESC;
+-- има за довършване
+-- 4. Колко юзъра са регистрирани с мейли от abv и колко от gmail и колко с различни от двата
+SELECT userName FROM users WHERE email LIKE '%@abv.bg';
+SELECT * FROM users WHERE email LIKE '%@gmail.com';
+SELECT * FROM users WHERE email  NOT LIKE '%gmail%' AND email  NOT LIKE '%abv%'
+
+-- 5. Кои users са banned
+SELECT username isbanned FROM users
+WHERE isbanned = 1;
+-- 6. Изкарайте всички потребители от базата като ги наредите по име в азбучен ред и дата на раждане(от най-младия към най-възрастния).
+SELECT * FROM users ORDER BY userName ASC, birthDate DESC;
+-- 7. Изкарайте всички потребители от базата, на които потребителското име започва с a.
+SELECT username FROM users
+WHERE username LIKE 'a%';
+-- 8. Изкарайте всички потребители от базата, които съдържат а в username името си
+SELECT username FROM users
+WHERE username LIKE '%a%';
