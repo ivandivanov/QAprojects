@@ -23,3 +23,16 @@ WHERE username LIKE 'a%';
 -- 8. Изкарайте всички потребители от базата, които съдържат а в username името си
 SELECT username FROM users
 WHERE username LIKE '%a%';
+-- 9. Изкарайте всички потребители от базата, чието име се състои от 2 имена
+SELECT username FROM users
+WHERE username LIKE '% %';
+-- 10. Регистрирайте 1 юзър през UI-а и го забранете след това от базата
+
+-- 11. Брой на всички постове
+SELECT * FROM posts;
+
+-- 12. Брой на всички постове групирани по статуса на post-a
+SELECT * FROM posts WHERE postStatus = 'private';
+SELECT * FROM posts WHERE postStatus = 'public';
+
+
