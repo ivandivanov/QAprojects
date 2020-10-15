@@ -11,7 +11,6 @@ SELECT * FROM users ORDER BY birthDate DESC;
 SELECT userName FROM users WHERE email LIKE '%@abv.bg';
 SELECT * FROM users WHERE email LIKE '%@gmail.com';
 SELECT * FROM users WHERE email  NOT LIKE '%gmail%' AND email  NOT LIKE '%abv%'
-
 -- 5. Кои users са banned
 SELECT username isbanned FROM users
 WHERE isbanned = 1;
@@ -34,5 +33,15 @@ SELECT * FROM posts;
 -- 12. Брой на всички постове групирани по статуса на post-a
 SELECT * FROM posts WHERE postStatus = 'private';
 SELECT * FROM posts WHERE postStatus = 'public';
+-- 13. Намерете поста/овете с най-къс caption
+SELECT * FROM posts
+ORDER BY LENGTH(caption) ASC
+LIMIT 1;
+-- 14. Покажете поста с най-дълъг caption
+SELECT * FROM posts
+ORDER BY LENGTH(caption) DESC
+LIMIT 1;
+
+
 
 
